@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="beatmap_editor" xml:space="preserve">
+    <value>Sunting peta rentak</value>
+  </data>
+  <data name="waveform_opacity" xml:space="preserve">
+    <value>Kelegapan bentuk gelombang</value>
+  </data>
+  <data name="show_hit_markers" xml:space="preserve">
+    <value>Tunjuk penanda pukulan</value>
+  </data>
+  <data name="auto_seek_on_placement" xml:space="preserve">
+    <value>Jangkau secara automatik setelah meletakkan objek</value>
+  </data>
+  <data name="timing" xml:space="preserve">
+    <value>Pemasaan</value>
+  </data>
+  <data name="set_preview_point_to_current" xml:space="preserve">
+    <value>Tetapkan titik pratonton ke masa ini</value>
+  </data>
+  <data name="adjust_existing_objects_on_timing_changes" xml:space="preserve">
+    <value>Gerakkan objek yang sudah diletakkan ketika mengubah pemasaan</value>
+  </data>
+  <data name="export_for_editing" xml:space="preserve">
+    <value>Untuk penyuntingan (.olz)</value>
+  </data>
+  <data name="export_for_compatibility" xml:space="preserve">
+    <value>Untuk keserasian (.osz)</value>
+  </data>
+  <data name="create_new_difficulty" xml:space="preserve">
+    <value>Cipta kesukaran baru</value>
+  </data>
+  <data name="change_difficulty" xml:space="preserve">
+    <value>Ubah kesukaran</value>
+  </data>
+  <data name="delete_difficulty" xml:space="preserve">
+    <value>Padam kesukaran</value>
+  </data>
+  <data name="edit_externally" xml:space="preserve">
+    <value>Sunting di luar</value>
+  </data>
+  <data name="submit_beatmap" xml:space="preserve">
+    <value>Serah peta rentak</value>
+  </data>
+  <data name="setup_screen" xml:space="preserve">
+    <value>persediaan</value>
+  </data>
+  <data name="compose_screen" xml:space="preserve">
+    <value>gubah</value>
+  </data>
+  <data name="design_screen" xml:space="preserve">
+    <value>reka bentuk</value>
+  </data>
+  <data name="timing_screen" xml:space="preserve">
+    <value>pemasaan</value>
+  </data>
+  <data name="verify_screen" xml:space="preserve">
+    <value>sahkan</value>
+  </data>
+  <data name="playback_speed" xml:space="preserve">
+    <value>Kelajuan putar semula</value>
+  </data>
+  <data name="test_beatmap" xml:space="preserve">
+    <value>Uji!</value>
+  </data>
+  <data name="rotation_unsnapped" xml:space="preserve">
+    <value>{0:0}°</value>
+  </data>
+  <data name="rotation_snapped" xml:space="preserve">
+    <value>{0:0}° (terlekat)</value>
+  </data>
+  <data name="limited_distance_snap_grid" xml:space="preserve">
+    <value>Hadkan penempatan lekat jarak ke masa semasa</value>
+  </data>
+  <data name="contract_sidebars" xml:space="preserve">
+    <value>Kecut palang sisi ketika tidak dilayang</value>
+  </data>
+  <data name="must_be_in_editor_to_handle_links" xml:space="preserve">
+    <value>Mesti berada dalam mod sunting untuk menangani pautan penyunting</value>
+  </data>
+  <data name="failed_to_parse_edtior_link" xml:space="preserve">
+    <value>Gagal menghuraikan pautan penyunting</value>
+  </data>
+  <data name="timeline" xml:space="preserve">
+    <value>Garis masa</value>
+  </data>
+  <data name="timeline_show_timing_changes" xml:space="preserve">
+    <value>Tunjuk perubahan pemasaan</value>
+  </data>
+  <data name="Finish editing and import changes" xml:space="preserve">
+    <value>Selesaikan penyuntingan dan import perubahan</value>
+  </data>
+  <data name="timeline_show_breaks" xml:space="preserve">
+    <value>Tunjuk rehat</value>
+  </data>
+  <data name="timeline_show_ticks" xml:space="preserve">
+    <value>Tunjuk tanda</value>
+  </data>
+  <data name="bookmarks" xml:space="preserve">
+    <value>Penanda</value>
+  </data>
+  <data name="add_bookmark" xml:space="preserve">
+    <value>Tambah penanda</value>
+  </data>
+  <data name="remove_closest_bookmark" xml:space="preserve">
+    <value>Padam penanda terdekat</value>
+  </data>
+  <data name="seek_to_previous_bookmark" xml:space="preserve">
+    <value>Jangkau ke penanda sebelumnya</value>
+  </data>
+  <data name="seek_to_next_bookmark" xml:space="preserve">
+    <value>Jangkau ke penanda seterusnya</value>
+  </data>
+  <data name="reset_bookmarks" xml:space="preserve">
+    <value>Tetap semula penanda</value>
+  </data>
+  <data name="open_info_page" xml:space="preserve">
+    <value>Buka halaman maklumat peta rentak</value>
+  </data>
+  <data name="open_discussion_page" xml:space="preserve">
+    <value>Buka halaman perbincangan peta rentak</value>
+  </data>
+  <data name="check_current_difficulty" xml:space="preserve">
+    <value>Kesukaran semasa</value>
+  </data>
+  <data name="check_entire_beatmap_set" xml:space="preserve">
+    <value>Seluruh perenggu peta rentak</value>
+  </data>
+</root>

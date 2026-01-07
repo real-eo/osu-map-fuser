@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="all_read" xml:space="preserve">
+    <value>Все уведомления прочитаны!</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Загрузка непрочитанных уведомлений...</value>
+  </data>
+  <data name="mark_read" xml:space="preserve">
+    <value>Прочитать</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>Уведомлений нет</value>
+  </data>
+  <data name="see_all" xml:space="preserve">
+    <value>список всех уведомлений</value>
+  </data>
+  <data name="see_channel" xml:space="preserve">
+    <value>перейти в чат</value>
+  </data>
+  <data name="verifying" xml:space="preserve">
+    <value>Пожалуйста, подтвердите текущую сессию, чтобы посмотреть уведомления</value>
+  </data>
+  <data name="action_type._" xml:space="preserve">
+    <value>все</value>
+  </data>
+  <data name="action_type.beatmapset" xml:space="preserve">
+    <value>карты</value>
+  </data>
+  <data name="action_type.build" xml:space="preserve">
+    <value>билды</value>
+  </data>
+  <data name="action_type.channel" xml:space="preserve">
+    <value>чат</value>
+  </data>
+  <data name="action_type.forum_topic" xml:space="preserve">
+    <value>форум</value>
+  </data>
+  <data name="action_type.news_post" xml:space="preserve">
+    <value>новости</value>
+  </data>
+  <data name="action_type.team" xml:space="preserve">
+    <value>команда</value>
+  </data>
+  <data name="action_type.user" xml:space="preserve">
+    <value>игроки</value>
+  </data>
+  <data name="filters._" xml:space="preserve">
+    <value>все</value>
+  </data>
+  <data name="filters.beatmapset" xml:space="preserve">
+    <value>карты</value>
+  </data>
+  <data name="filters.build" xml:space="preserve">
+    <value>билды</value>
+  </data>
+  <data name="filters.channel" xml:space="preserve">
+    <value>чат</value>
+  </data>
+  <data name="filters.forum_topic" xml:space="preserve">
+    <value>форум</value>
+  </data>
+  <data name="filters.news_post" xml:space="preserve">
+    <value>новости</value>
+  </data>
+  <data name="filters.team" xml:space="preserve">
+    <value>команда</value>
+  </data>
+  <data name="filters.user" xml:space="preserve">
+    <value>игроки</value>
+  </data>
+  <data name="item.beatmapset._" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change._" xml:space="preserve">
+    <value>Гостевая сложность</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change" xml:space="preserve">
+    <value>Вас назначили владельцем сложности "{0}" на карте "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change_compact" xml:space="preserve">
+    <value>Вас назначили владельцем сложности "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion._" xml:space="preserve">
+    <value>Обсуждение карты</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock" xml:space="preserve">
+    <value>Закрыто обсуждение карты "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock_compact" xml:space="preserve">
+    <value>Обсуждение закрыто</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new" xml:space="preserve">
+    <value>Новый отзыв на карту "{0}" от {1}: "{2}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_empty" xml:space="preserve">
+    <value>Новый отзыв на карту "{0}" от {1}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_compact" xml:space="preserve">
+    <value>Новый отзыв от {0}: "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_compact_empty" xml:space="preserve">
+    <value>Новый отзыв от {0}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_review_new" xml:space="preserve">
+    <value>Новый отзыв на карту "{0}" от {1}, содержащий {2}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_review_new_compact" xml:space="preserve">
+    <value>Новый отзыв от {0}, содержащий {1}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock" xml:space="preserve">
+    <value>Открыто обсуждение карты "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock_compact" xml:space="preserve">
+    <value>Обсуждение открыто</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.praises" xml:space="preserve">
+    <value>{0} похвалу|{0} похвалы|{0} похвал</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.problems" xml:space="preserve">
+    <value>{0} проблему|{0} проблемы|{0} проблем</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.suggestions" xml:space="preserve">
+    <value>{0} предложение|{0} предложения|{0} предложений</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem._" xml:space="preserve">
+    <value>Проблема с квалифицированной картой</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem" xml:space="preserve">
+    <value>Жалоба от {0} на карту "{1}": "{2}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_empty" xml:space="preserve">
+    <value>Жалоба от {0} на карту "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_compact" xml:space="preserve">
+    <value>Жалоба от {0}: "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_compact_empty" xml:space="preserve">
+    <value>Жалоба от {0}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state._" xml:space="preserve">
+    <value>Категория карты изменена</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_disqualify" xml:space="preserve">
+    <value>Карта "{0}" дисквалифицирована</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_disqualify_compact" xml:space="preserve">
+    <value>Карта дисквалифицирована</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_love" xml:space="preserve">
+    <value>Карте "{0}" присвоена категория Любимая</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_love_compact" xml:space="preserve">
+    <value>Карте присвоена категория Любимая</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_nominate" xml:space="preserve">
+    <value>Карта "{0}" номинирована</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_nominate_compact" xml:space="preserve">
+    <value>Карта номинирована</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_qualify" xml:space="preserve">
+    <value>Карта "{0}" получила достаточно номинаций и вошла в очередь получения рейтинга</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_qualify_compact" xml:space="preserve">
+    <value>Карта поставлена в очередь получения рейтинга</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_rank" xml:space="preserve">
+    <value>Карта "{0}" стала Рейтинговой</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_rank_compact" xml:space="preserve">
+    <value>Карта стала Рейтинговой</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_remove_from_loved" xml:space="preserve">
+    <value>Карта "{0}" исключена из категории Любимая</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_remove_from_loved_compact" xml:space="preserve">
+    <value>Карта исключена из категории Любимая</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_reset_nominations" xml:space="preserve">
+    <value>Сброшена номинация карты "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_reset_nominations_compact" xml:space="preserve">
+    <value>Номинация сброшена</value>
+  </data>
+  <data name="item.beatmapset.comment._" xml:space="preserve">
+    <value>Новый комментарий</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_new" xml:space="preserve">
+    <value>{0} оставил комментарий "{1}" под картой "{2}"</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} оставил комментарий "{1}"</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_reply" xml:space="preserve">
+    <value>{0} ответил "{1}" под картой "{2}"</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} ответил "{1}"</value>
+  </data>
+  <data name="item.channel._" xml:space="preserve">
+    <value>Чат</value>
+  </data>
+  <data name="item.channel.announcement._" xml:space="preserve">
+    <value>Новое объявление</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement" xml:space="preserve">
+    <value>{0} сообщает: "{1}"</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement_compact" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement_group" xml:space="preserve">
+    <value>Объявление от {0}</value>
+  </data>
+  <data name="item.channel.channel._" xml:space="preserve">
+    <value>Новое сообщение</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message" xml:space="preserve">
+    <value>{0} написал: "{1}"</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message_compact" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message_group" xml:space="preserve">
+    <value>от {0}</value>
+  </data>
+  <data name="item.channel.channel_team._" xml:space="preserve">
+    <value>Новое сообщение от команды</value>
+  </data>
+  <data name="item.channel.channel_team.team.channel_team" xml:space="preserve">
+    <value>{0} написал: "{1}"</value>
+  </data>
+  <data name="item.channel.channel_team.team.channel_team_compact" xml:space="preserve">
+    <value>{0} написал: "{1}"</value>
+  </data>
+  <data name="item.channel.channel_team.team.channel_team_group" xml:space="preserve">
+    <value>{0} написал: "{1}"</value>
+  </data>
+  <data name="item.build._" xml:space="preserve">
+    <value>Список изменений</value>
+  </data>
+  <data name="item.build.comment._" xml:space="preserve">
+    <value>Новый комментарий</value>
+  </data>
+  <data name="item.build.comment.comment_new" xml:space="preserve">
+    <value>{0} оставил комметарий "{1}" под обновлением "{2}"</value>
+  </data>
+  <data name="item.build.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} оставил комментарий "{1}"</value>
+  </data>
+  <data name="item.build.comment.comment_reply" xml:space="preserve">
+    <value>{0} ответил "{1}" под обновлением "{2}"</value>
+  </data>
+  <data name="item.build.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} ответил "{1}"</value>
+  </data>
+  <data name="item.news_post._" xml:space="preserve">
+    <value>Новости</value>
+  </data>
+  <data name="item.news_post.comment._" xml:space="preserve">
+    <value>Новый комментарий</value>
+  </data>
+  <data name="item.news_post.comment.comment_new" xml:space="preserve">
+    <value>{0} оставил комметарий "{1}" под новостью "{2}"</value>
+  </data>
+  <data name="item.news_post.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} оставил комментарий "{1}"</value>
+  </data>
+  <data name="item.news_post.comment.comment_reply" xml:space="preserve">
+    <value>{0} ответил "{1}" под новостью "{2}"</value>
+  </data>
+  <data name="item.news_post.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} ответил "{1}"</value>
+  </data>
+  <data name="item.forum_topic._" xml:space="preserve">
+    <value>Тема форума</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply._" xml:space="preserve">
+    <value>Новый ответ на форуме</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply.forum_topic_reply" xml:space="preserve">
+    <value>{0} ответил в теме "{1}"</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply.forum_topic_reply_compact" xml:space="preserve">
+    <value>{0} ответил</value>
+  </data>
+  <data name="item.team.team_application._" xml:space="preserve">
+    <value>Запрос на вступление в команду</value>
+  </data>
+  <data name="item.team.team_application.team_application_accept" xml:space="preserve">
+    <value>Вы стали участником команды {0}</value>
+  </data>
+  <data name="item.team.team_application.team_application_accept_compact" xml:space="preserve">
+    <value>Вы стали участником команды {0}</value>
+  </data>
+  <data name="item.team.team_application.team_application_group" xml:space="preserve">
+    <value>Обновления по запросам на вступление в команду</value>
+  </data>
+  <data name="item.team.team_application.team_application_reject" xml:space="preserve">
+    <value>Ваш запрос на вступление в команду {0} отклонён</value>
+  </data>
+  <data name="item.team.team_application.team_application_reject_compact" xml:space="preserve">
+    <value>Ваш запрос на вступление в команду {0} отклонён</value>
+  </data>
+  <data name="item.team.team_application.team_application_store" xml:space="preserve">
+    <value>{0} подал запрос на вступление в вашу команду</value>
+  </data>
+  <data name="item.team.team_application.team_application_store_compact" xml:space="preserve">
+    <value>{0} подал запрос на вступление в вашу команду</value>
+  </data>
+  <data name="item.user.user_beatmapset_new._" xml:space="preserve">
+    <value>Новая карта</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new" xml:space="preserve">
+    <value>Новая карта "{0}" от {1}</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new_compact" xml:space="preserve">
+    <value>Новая карта "{0}"</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new_group" xml:space="preserve">
+    <value>Новые карты от {0}</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_revive" xml:space="preserve">
+    <value>Воскрешена карта "{0}" от {1}</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_revive_compact" xml:space="preserve">
+    <value>Воскрешена карта "{0}"</value>
+  </data>
+  <data name="item.user_achievement._" xml:space="preserve">
+    <value>Медали</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock._" xml:space="preserve">
+    <value>Новая медаль</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock" xml:space="preserve">
+    <value>Получена медаль "{0}"!</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock_compact" xml:space="preserve">
+    <value>Получена медаль "{0}"!</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock_group" xml:space="preserve">
+    <value>Получены новые медали!</value>
+  </data>
+  <data name="mail.beatmapset.beatmap_owner_change.beatmap_owner_change" xml:space="preserve">
+    <value>Вас назначили владельцем сложности на карте "{0}" </value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_lock" xml:space="preserve">
+    <value>Закрыто обсуждение карты "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new" xml:space="preserve">
+    <value>Новые отзывы в обсуждении карты "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock" xml:space="preserve">
+    <value>Открыто обсуждение карты "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem" xml:space="preserve">
+    <value>Новое сообщение о проблеме на карте "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_disqualify" xml:space="preserve">
+    <value>Карта "{0}" дисквалифицирована</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_love" xml:space="preserve">
+    <value>Карте "{0}" присвоена категория Любимая</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_nominate" xml:space="preserve">
+    <value>Карта "{0}" номинирована</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_qualify" xml:space="preserve">
+    <value>Карта "{0}" получила достаточно номинаций и вошла в очередь получения рейтинга</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_rank" xml:space="preserve">
+    <value>Карта "{0}" стала Рейтинговой</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_remove_from_loved" xml:space="preserve">
+    <value>Карта "{0}" исключена из категории Любимая</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_reset_nominations" xml:space="preserve">
+    <value>Сброшена номинация карты "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.comment.comment_new" xml:space="preserve">
+    <value>Новые комментарии под картой "{0}"</value>
+  </data>
+  <data name="mail.channel.announcement.channel_announcement" xml:space="preserve">
+    <value>Новое объявление в канале "{0}"</value>
+  </data>
+  <data name="mail.channel.channel.channel_message" xml:space="preserve">
+    <value>Вы получили новое сообщение от {0}</value>
+  </data>
+  <data name="mail.channel.channel_team.channel_team" xml:space="preserve">
+    <value>Новое сообщение в чате команды "{0}"</value>
+  </data>
+  <data name="mail.build.comment.comment_new" xml:space="preserve">
+    <value>Новые комментарии под обновлением "{0}"</value>
+  </data>
+  <data name="mail.news_post.comment.comment_new" xml:space="preserve">
+    <value>Новые комментарии под новостью "{0}"</value>
+  </data>
+  <data name="mail.forum_topic.forum_topic_reply.forum_topic_reply" xml:space="preserve">
+    <value>Новые ответы в теме "{0}"</value>
+  </data>
+  <data name="mail.team.team_application.team_application_accept" xml:space="preserve">
+    <value>Вы стали участником команды {0}</value>
+  </data>
+  <data name="mail.team.team_application.team_application_reject" xml:space="preserve">
+    <value>Ваш запрос на вступление в команду {0} отклонён</value>
+  </data>
+  <data name="mail.team.team_application.team_application_store" xml:space="preserve">
+    <value>{0} подал запрос на вступление в вашу команду</value>
+  </data>
+  <data name="mail.user.user_beatmapset_new.user_beatmapset_new" xml:space="preserve">
+    <value>{0} создал новые карты</value>
+  </data>
+  <data name="mail.user.user_beatmapset_new.user_beatmapset_revive" xml:space="preserve">
+    <value>{0} воскресил карты</value>
+  </data>
+</root>

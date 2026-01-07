@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>paziņojumi</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>gaida tevi</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Aktīvie Uzdevumi</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Notīrīt Visu</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Jūsu akumulatora uzlādes līmenis ir zems! Uzlādējiet ierīci, lai novērstu traucējumus spēles laikā.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Jūsu spēles skaļums ir pārāk zems, lai kaut ko dzirdētu! Klikšķiniet šeit, lai to atjaunotu.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Pašreizējam spēles režīmam nav pieejams automātiskās atskaņošanas mods!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! nespēj pareizi atskaņot audio.\n\nPamēģiniet nomainīt audio ierīci uz darbojošos iestatījumu.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Rezultātu pārklājums pašlaik ir atspējots. To var pārslēgt, nospiežot {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>Saitei {0} ir neatbalstīts vai bīstams protokols, un tā netiks atvērta.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Turpmākās ziņas tiks pierakstītas. Izspied lai redzētu pierakstu failu.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Izbeidz zīmēšanas planšetes atbalstu kļūdas dēļ: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Saskārām zīmēšanas planšetes brīdinājumu, tā iespējams nefunkcionē pareizi. Uzspied lai redzētu sarakstu ar atbalstītajām zīmēšanas planšetēm.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Šīs saites veids nav atbalstīts!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} tevi ielūdza uz daudzspēlētāju spēli "{1}"! Uzspied lai pievienotos.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Tev nav ritma-mape šim atkārtojumam.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Ielādē trūkstošo ritma-mapi šim atkārtojumam...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Tavi lokālais ritma-mapes atkārtojums izskatās citādāk nekā paredzēts. Tev iespējams to vajag atjaunināt vai atkārtoti to lejupielādēt.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Tu tagad esi palaidis osu! {0}.
+Uzspied lai apskatītu kas ir jauns!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Atjauninājums gatavs instalēšanai. Noklikšķiniet, lai restartētu!</value>
+  </data>
+  <data name="not_official_build" xml:space="preserve">
+    <value>Šī nav oficiāla spēles uzbūve. Rezultāti netiks iesūtīti un citas tiešsaistes sistēmas iespējams nestrādās kā paredzētas.</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Lejupielādē atjauninājumus...</value>
+  </data>
+  <data name="multiplayer_room_ended" xml:space="preserve">
+    <value>Šī daudzspēlētāju istaba ir beigusies. Uzspied lai parādītu istabas rezultātus.</value>
+  </data>
+  <data name="mention" xml:space="preserve">
+    <value>Pieminēt</value>
+  </data>
+</root>

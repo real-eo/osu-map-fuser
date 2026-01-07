@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="maintenance_section_header" xml:space="preserve">
+    <value>Selenggara</value>
+  </data>
+  <data name="select_directory" xml:space="preserve">
+    <value>Pilih direktori</value>
+  </data>
+  <data name="migration_in_progress" xml:space="preserve">
+    <value>Menghijrah</value>
+  </data>
+  <data name="migration_description" xml:space="preserve">
+    <value>Penghijrahan boleh mengambil masa beberapa minit bergantung kepada kelajuan cakera anda.</value>
+  </data>
+  <data name="prohibited_interact_during_migration" xml:space="preserve">
+    <value>Sila elakkan daripada berinteraksi dengan osu!</value>
+  </data>
+  <data name="select_new_location" xml:space="preserve">
+    <value>Sila pilih tempat baharu</value>
+  </data>
+  <data name="target_directory_already_installed_osu" xml:space="preserve">
+    <value>Direktori sasaran nampaknya sudah mempunyai pemasangan osu!. Gunakan data itu?</value>
+  </data>
+  <data name="restart_and_re_open_required_for_completion" xml:space="preserve">
+    <value>Untuk melengkapkan kendalian ini, osu! akan tutup. Sila buka semula untuk menggunakan tempat data baharu.</value>
+  </data>
+  <data name="delete_all_beatmaps" xml:space="preserve">
+    <value>Padamkan SEMUA peta rentak</value>
+  </data>
+  <data name="delete_all_beatmap_videos" xml:space="preserve">
+    <value>Padamkan SEMUA video peta rentak</value>
+  </data>
+  <data name="reset_all_offsets" xml:space="preserve">
+    <value>Tetap semula SEMUA imbangan peta rentak</value>
+  </data>
+  <data name="delete_all_scores" xml:space="preserve">
+    <value>Padamkan SEMUA markah</value>
+  </data>
+  <data name="delete_all_skins" xml:space="preserve">
+    <value>Padamkan SEMUA rupa</value>
+  </data>
+  <data name="delete_all_collections" xml:space="preserve">
+    <value>Padamkan SEMUA koleksi</value>
+  </data>
+  <data name="restore_all_hidden_difficulties" xml:space="preserve">
+    <value>Pulihkan semua kesukaran tersorok</value>
+  </data>
+  <data name="restore_all_recently_deleted_beatmaps" xml:space="preserve">
+    <value>Pulihkan semua peta rentak yang terpadam</value>
+  </data>
+  <data name="delete_all_mod_presets" xml:space="preserve">
+    <value>Padamkan SEMUA pratata penyesuai</value>
+  </data>
+  <data name="restore_all_recently_deleted_mod_presets" xml:space="preserve">
+    <value>Pulihkan semua pratata penyesuai yang terpadam</value>
+  </data>
+  <data name="deleted_all_collections" xml:space="preserve">
+    <value>Semua koleksi telah dipadam!</value>
+  </data>
+  <data name="no_collections_found_to_delete" xml:space="preserve">
+    <value>Tiada koleksi ditemui untuk dipadam!</value>
+  </data>
+  <data name="deleted_all_mod_presets" xml:space="preserve">
+    <value>Semua pratata penyesuai telah dipadam!</value>
+  </data>
+  <data name="no_mod_presets_found_to_delete" xml:space="preserve">
+    <value>Tiada pratata penyesuai ditemui untuk dipadam!</value>
+  </data>
+  <data name="restored_all_deleted_mod_presets" xml:space="preserve">
+    <value>Semua pratata penyesuai terpadam telah dipulihkan!</value>
+  </data>
+  <data name="no_mod_presets_found_to_restore" xml:space="preserve">
+    <value>Tiada pratata penyesuai ditemui untuk dipulihkan!</value>
+  </data>
+  <data name="stable_directory_select_header" xml:space="preserve">
+    <value>Sila pilih tempat pemasangan osu!stable anda</value>
+  </data>
+</root>

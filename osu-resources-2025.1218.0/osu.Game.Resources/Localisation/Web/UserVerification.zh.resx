@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="box.sent" xml:space="preserve">
+    <value>验证邮件已发送至 {0} ，请输入邮件中的验证码。</value>
+  </data>
+  <data name="box.title" xml:space="preserve">
+    <value>账户验证</value>
+  </data>
+  <data name="box.verifying" xml:space="preserve">
+    <value>验证中……</value>
+  </data>
+  <data name="box.issuing" xml:space="preserve">
+    <value>正在生成新的验证码……</value>
+  </data>
+  <data name="box.info.check_spam" xml:space="preserve">
+    <value>如果未能找到邮件，请检查垃圾邮件文件夹。</value>
+  </data>
+  <data name="box.info.recover" xml:space="preserve">
+    <value>无法访问或忘记了所使用的邮箱？请通过 {0} 以重设绑定邮箱地址和密码。</value>
+  </data>
+  <data name="box.info.recover_link" xml:space="preserve">
+    <value>点击此处</value>
+  </data>
+  <data name="box.info.reissue" xml:space="preserve">
+    <value>也可以尝试 {0} 或者 {1}。</value>
+  </data>
+  <data name="box.info.reissue_link" xml:space="preserve">
+    <value>重发验证码</value>
+  </data>
+  <data name="box.info.logout_link" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="box_totp.heading" xml:space="preserve">
+    <value>请输入您身份验证器应用中的验证码。</value>
+  </data>
+  <data name="box_totp.info.logout._" xml:space="preserve">
+    <value>或者您可以 {0} 。</value>
+  </data>
+  <data name="box_totp.info.logout.link" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="box_totp.info.mail_fallback._" xml:space="preserve">
+    <value>如果您不能访问您的应用，{0}。</value>
+  </data>
+  <data name="box_totp.info.mail_fallback.link" xml:space="preserve">
+    <value>您可以使用电子邮件验证</value>
+  </data>
+  <data name="errors.expired" xml:space="preserve">
+    <value>该验证码已经过期，已重新发送新的验证邮件至绑定邮箱。</value>
+  </data>
+  <data name="errors.incorrect_key" xml:space="preserve">
+    <value>验证码错误。</value>
+  </data>
+  <data name="errors.retries_exceeded" xml:space="preserve">
+    <value>验证码错误且重试次数已达上限，已重新发送新的验证邮件至绑定邮箱。</value>
+  </data>
+  <data name="errors.reissued" xml:space="preserve">
+    <value>已重新发送新的验证邮件至绑定邮箱。</value>
+  </data>
+  <data name="errors.totp_used_key" xml:space="preserve">
+    <value>验证码已被使用。请等待并使用新的验证码。</value>
+  </data>
+  <data name="errors.totp_gone" xml:space="preserve">
+    <value>身份验证器密钥已移除，将切换到电子邮件验证。已发送验证邮件。</value>
+  </data>
+  <data name="errors.unknown" xml:space="preserve">
+    <value>发生了未知的错误，已重新发送新的验证邮件至绑定邮箱。</value>
+  </data>
+</root>

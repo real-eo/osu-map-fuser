@@ -1,0 +1,3 @@
+../build-command
+export PATH="../osuReplayEditorV3/ReplayEditor/thirdparty/bass24:$PATH"
+./osu-map-fuser.exe

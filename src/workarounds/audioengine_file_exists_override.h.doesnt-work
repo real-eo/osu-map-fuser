@@ -1,0 +1,11 @@
+#pragma once
+#include <fstream>
+#include <string>
+
+inline bool file_exists_override(const std::wstring &fname) {
+    std::ifstream f(fname.c_str(), std::ios::binary);
+    return f.good();
+}
+
+// replace the local static file_exists in audioengine.cpp
+#define file_exists file_exists_override

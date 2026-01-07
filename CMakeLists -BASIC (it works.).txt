@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
+project(osu-map-fuser VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+# Collect main
+file(GLOB SRC_FILES
+    "${CMAKE_SOURCE_DIR}/main.cpp"
+)
+
+# Create executable
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+
+# Link standard library
+target_link_libraries(${PROJECT_NAME} PRIVATE)
