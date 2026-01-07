@@ -34,7 +34,6 @@
     } // namespace ns
 
 
-
 // * Embed legacy skin resources
 namespace legacy {
 namespace samples {
