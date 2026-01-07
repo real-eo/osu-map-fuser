@@ -108,7 +108,7 @@ bool Application::init() {
         return false;
     } else {
         // Set default audio settings
-        audioPlayer->setVolume(1.0f);                                                    // Max volume
+        audioPlayer->setVolume(0.5f);                                                    // Max volume
         audioPlayer->setPlaybackSpeed(1.0f);                                             // Normal speed
 
         // Show current audio settings

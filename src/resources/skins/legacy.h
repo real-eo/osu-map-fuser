@@ -7,6 +7,7 @@
     extern const unsigned char varname[];       \
     extern const std::size_t varname##_size
 
+// * Audio macros
 #define EXTERN_SAMPLE_SECTION(ns)               \
     namespace ns {                              \
     namespace hit {                             \
