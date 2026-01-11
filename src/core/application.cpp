@@ -125,8 +125,9 @@ bool Application::init() {
         sfxPlayer->loadSampleMemory("drum-hitclap", legacy::samples::osu::drum::hit::clap, legacy::samples::osu::drum::hit::clap_size, 1.0f);
         // // sfxPlayer->play("drum-hitclap");
     }
-
+    
     // * Load skin
+    DEBUG_LOG("Random skin element size: " << legacy::sprites::score::TWO::HD_size);
     // TODO: Load skin from user-selected location; fallback to default legacy skin
 
     running = true;

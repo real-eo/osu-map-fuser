@@ -12,13 +12,7 @@
 #define RVALUE_SIZE(varname) }; const std::size_t varname##_size = sizeof(varname);
 
 
-// Helper for grouping textures along with their sizes
-struct frame {
-    const unsigned char* texture;
-    std::size_t size;
-};
-
-namespace legacy {
+namespace embedments {
 // * ==== [AUDIO] ==========================================================
 namespace samples {
 // * MENU SAMPLES
@@ -592,10 +586,10 @@ namespace osu {
             RVALUE_SIZE(HD)
         } // namespace EIGHT
         namespace NINE {
-            EMBED_LVALUE(HD)
-            #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/default-9@2x.png"
-            RVALUE_SIZE(HD)
-        } // namespace NINE
+        EMBED_LVALUE(HD)
+        #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/default-9@2x.png"
+        RVALUE_SIZE(HD)
+    } // namespace NINE
     } // namespace default
     namespace followpoint {
         EMBED_LVALUE(HD)
@@ -687,8 +681,9 @@ namespace osu {
     } // namespace reversearrow
     namespace slider {
         namespace b {
-            // | sliderb frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(HD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/sliderb0@2x.png"
@@ -739,41 +734,7 @@ namespace osu {
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/sliderb9@2x.png"
                     RVALUE_SIZE(HD)
                 } // namespace NINE
-
-                // // constexpr unsigned int FRAMES = 10;
-                // // const std::size_t TOTAL_SIZE  = ZERO::HD_size + ONE::HD_size + TWO::HD_size + THREE::HD_size + FOUR::HD_size +
-                // //                                 FIVE::HD_size + SIX::HD_size + SEVEN::HD_size + EIGHT::HD_size + NINE::HD_size;
             } // namespace _frames
-
-            // | Slider body frame array
-            // // const unsigned char* const HD[] = {
-            // //     // Frame pointers
-            // //     _frames::ZERO::HD,
-            // //     _frames::ONE::HD,
-            // //     _frames::TWO::HD,
-            // //     _frames::THREE::HD,
-            // //     _frames::FOUR::HD,
-            // //     _frames::FIVE::HD,
-            // //     _frames::SIX::HD,
-            // //     _frames::SEVEN::HD,
-            // //     _frames::EIGHT::HD,
-            // //     _frames::NINE::HD,
-            // // };
-            const frame HD[] = {
-                { _frames::ZERO::HD,     _frames::ZERO::HD_size},
-                {  _frames::ONE::HD,      _frames::ONE::HD_size},
-                {  _frames::TWO::HD,      _frames::TWO::HD_size},
-                {_frames::THREE::HD,    _frames::THREE::HD_size},
-                { _frames::FOUR::HD,     _frames::FOUR::HD_size},
-                { _frames::FIVE::HD,     _frames::FIVE::HD_size},
-                {  _frames::SIX::HD,      _frames::SIX::HD_size},
-                {_frames::SEVEN::HD,    _frames::SEVEN::HD_size},
-                {_frames::EIGHT::HD,    _frames::EIGHT::HD_size},
-                { _frames::NINE::HD,     _frames::NINE::HD_size},
-            };
-            const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
-
-
             namespace nd {
                 EMBED_LVALUE(HD)
                 #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/sliderb-nd@2x.png"
@@ -870,8 +831,9 @@ namespace osu {
 namespace taiko {
     namespace pippidon {
         namespace clear {
-            // | clear frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(SD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/pippidonclear0.png"
@@ -918,24 +880,12 @@ namespace taiko {
                     RVALUE_SIZE(SD)
                 } // namespace EIGHT
             } // namespace _frames
-            
-            // | Clear frame array
-            const frame SD[] = {    
-                { _frames::ZERO::SD,   _frames::ZERO::SD_size},
-                {  _frames::ONE::SD,    _frames::ONE::SD_size},
-                {  _frames::TWO::SD,    _frames::TWO::SD_size},
-                {_frames::THREE::SD,  _frames::THREE::SD_size},
-                { _frames::FOUR::SD,   _frames::FOUR::SD_size},
-                { _frames::FIVE::SD,   _frames::FIVE::SD_size},
-                {  _frames::SIX::SD,    _frames::SIX::SD_size},
-                {_frames::SEVEN::SD,  _frames::SEVEN::SD_size},
-                {_frames::EIGHT::SD,  _frames::EIGHT::SD_size},
-            };
         } // namespace clear
 
         namespace fail {
-            // | fail frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(SD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/pippidonfail0.png"
@@ -952,19 +902,12 @@ namespace taiko {
                     RVALUE_SIZE(SD)
                 } // namespace TWO
             } // namespace _frames
-
-            // | fail frame array
-            const frame SD[] = {
-                { _frames::ZERO::SD,   _frames::ZERO::SD_size},
-                {  _frames::ONE::SD,    _frames::ONE::SD_size},
-                {  _frames::TWO::SD,    _frames::TWO::SD_size},
-            };
-
         } // namespace fail
 
         namespace idle {
-            // | idle frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(SD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/pippidonidle0.png"
@@ -976,17 +919,12 @@ namespace taiko {
                     RVALUE_SIZE(SD)
                 } // namespace ONE
             } // namespace _frames
-
-            // | idle frame array
-            const frame SD[] = {
-                { _frames::ZERO::SD,   _frames::ZERO::SD_size},
-                {  _frames::ONE::SD,    _frames::ONE::SD_size},
-            };
         } // namespace idle
 
         namespace kiai {
-            // | kiai frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(SD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/pippidonkiai0.png"
@@ -998,12 +936,6 @@ namespace taiko {
                     RVALUE_SIZE(SD)
                 } // namespace ONE
             } // namespace _frames
-
-            // | kiai frame array
-            const frame SD[] = {
-                { _frames::ZERO::SD,   _frames::ZERO::SD_size},
-                {  _frames::ONE::SD,    _frames::ONE::SD_size},
-            };
         } // namespace kiai
     } // namespace pippidon
     namespace bar {
@@ -1134,6 +1066,7 @@ namespace taiko {
 // * osu!catch
 namespace catchthebeat {
     namespace apple {
+        // Apple texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-apple@2x.png"
         RVALUE_SIZE(HD)
@@ -1144,7 +1077,9 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace overlay
     } // namespace apple
+
     namespace bananas {
+        // Banana texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-bananas@2x.png"
         RVALUE_SIZE(HD)
@@ -1155,8 +1090,10 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace overlay
     } // namespace bananas
+
     namespace catcher {
         namespace fail {
+            // Catcher fail texture
             EMBED_LVALUE(HD)
             #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-catcher-fail@2x.png"
             RVALUE_SIZE(HD)
@@ -1167,17 +1104,21 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace idle
         namespace kiai {
-            EMBED_LVALUE(HD)
-            #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-catcher-kiai@2x.png"
-            RVALUE_SIZE(HD)
-        } // namespace kiai
+        EMBED_LVALUE(HD)
+        #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-catcher-kiai@2x.png"
+        RVALUE_SIZE(HD)
+    } // namespace kiai
     } // namespace catcher
+
     namespace drop {
+        // Drop texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-drop@2x.png"
         RVALUE_SIZE(HD)
     }
+
     namespace grapes {
+        // Grape texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-grapes@2x.png"
         RVALUE_SIZE(HD)
@@ -1188,7 +1129,9 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace overlay
     } // namespace grapes
+
     namespace orange {
+        // Orange texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/fruit-orange@2x.png"
         RVALUE_SIZE(HD)
@@ -1199,6 +1142,7 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace overlay
     } // namespace orange
+
     namespace pear {
         // Pear texture
         EMBED_LVALUE(HD)
@@ -1211,19 +1155,22 @@ namespace catchthebeat {
             RVALUE_SIZE(HD)
         } // namespace overlay
     } // namespace pear
+
 } // namespace catchthebeat
 
 
 // * osu!mania
 namespace mania {
     namespace lighting {
+        // Lighting texture
         EMBED_LVALUE(HD)
         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/lighting@2x.png"
         RVALUE_SIZE(HD)
 
         namespace L {
-            // | L frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(HD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/lightingL-0@2x.png"
@@ -1255,16 +1202,6 @@ namespace mania {
                     RVALUE_SIZE(HD)
                 } // namespace FIVE
             } // namespace _frames
-            
-            // | L frame array
-            const frame HD[] = {
-                { _frames::ZERO::HD,   _frames::ZERO::HD_size},
-                {  _frames::ONE::HD,    _frames::ONE::HD_size},
-                {  _frames::TWO::HD,    _frames::TWO::HD_size},
-                {_frames::THREE::HD,  _frames::THREE::HD_size},
-                { _frames::FOUR::HD,   _frames::FOUR::HD_size},
-                { _frames::FIVE::HD,   _frames::FIVE::HD_size},
-            };
         } // namespace L
 
         namespace N {
@@ -1301,8 +1238,9 @@ namespace mania {
             RVALUE_SIZE(HD)
         } // namespace great
         namespace perfect {
-            // | perfect frames
             namespace _frames {
+                // When externing, use byte-matricies, and implement 
+                // each frame as a byte array in their correct order.
                 namespace ZERO {
                     EMBED_LVALUE(HD)
                     #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/mania-hit300g-0@2x.png"
@@ -1314,12 +1252,6 @@ namespace mania {
                     RVALUE_SIZE(HD)
                 } // namespace ONE
             } // namespace _frames
-            
-            // | perfect frame array
-            const frame HD[] = {
-                { _frames::ZERO::HD,   _frames::ZERO::HD_size},
-                {  _frames::ONE::HD,    _frames::ONE::HD_size},
-            };
         } // namespace perfect
     } // namespace hit
     namespace key {
@@ -1357,6 +1289,7 @@ namespace mania {
             } // namespace D
         } // namespace S
     } // namespace key
+
     namespace note {
         namespace ONE {
             EMBED_LVALUE(HD)
@@ -1369,8 +1302,9 @@ namespace mania {
                 RVALUE_SIZE(HD)
             } // namespace H
             namespace L {
-                // | L frames
                 namespace _frames {
+                    // When externing, use byte-matricies, and implement 
+                    // each frame as a byte array in their correct order.
                     namespace ZERO {
                         EMBED_LVALUE(HD)
                         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/mania-note1L-0@2x.png"
@@ -1402,16 +1336,6 @@ namespace mania {
                         RVALUE_SIZE(HD)
                     } // namespace FIVE
                 } // namespace _frames
-            
-                // | L frame array
-                const frame HD[] = {
-                    { _frames::ZERO::HD,   _frames::ZERO::HD_size},
-                    {  _frames::ONE::HD,    _frames::ONE::HD_size},
-                    {  _frames::TWO::HD,    _frames::TWO::HD_size},
-                    {_frames::THREE::HD,  _frames::THREE::HD_size},
-                    { _frames::FOUR::HD,   _frames::FOUR::HD_size},
-                    { _frames::FIVE::HD,   _frames::FIVE::HD_size},
-                };
             } // namespace L
         } // namespace ONE
 
@@ -1426,8 +1350,9 @@ namespace mania {
                 RVALUE_SIZE(HD)
             } // namespace H
             namespace L {
-                // | L frames
                 namespace _frames {
+                    // When externing, use byte-matricies, and implement 
+                    // each frame as a byte array in their correct order.
                     namespace ZERO {
                         EMBED_LVALUE(HD)
                         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/mania-note2L-0@2x.png"
@@ -1459,16 +1384,6 @@ namespace mania {
                         RVALUE_SIZE(HD)
                     } // namespace FIVE
                 } // namespace _frames
-
-                // | L frame array
-                const frame HD[] = {
-                    { _frames::ZERO::HD,   _frames::ZERO::HD_size},
-                    {  _frames::ONE::HD,    _frames::ONE::HD_size},
-                    {  _frames::TWO::HD,    _frames::TWO::HD_size},
-                    {_frames::THREE::HD,  _frames::THREE::HD_size},
-                    { _frames::FOUR::HD,   _frames::FOUR::HD_size},
-                    { _frames::FIVE::HD,   _frames::FIVE::HD_size},
-                };
             } // namespace L
         } // namespace TWO
 
@@ -1483,8 +1398,9 @@ namespace mania {
                 RVALUE_SIZE(HD)
             } // namespace H
             namespace L {
-                // | L frames
                 namespace _frames {
+                    // When externing, use byte-matricies, and implement 
+                    // each frame as a byte array in their correct order.
                     namespace ZERO {
                         EMBED_LVALUE(HD)
                         #embed "../../../osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/mania-noteSL-0@2x.png"
@@ -1516,16 +1432,6 @@ namespace mania {
                         RVALUE_SIZE(HD)
                     } // namespace FIVE
                 } // namespace _frames
-            
-                // | L frame array
-                const frame HD[] = {
-                    { _frames::ZERO::HD,   _frames::ZERO::HD_size},
-                    {  _frames::ONE::HD,    _frames::ONE::HD_size},
-                    {  _frames::TWO::HD,    _frames::TWO::HD_size},
-                    {_frames::THREE::HD,  _frames::THREE::HD_size},
-                    { _frames::FOUR::HD,   _frames::FOUR::HD_size},
-                    { _frames::FIVE::HD,   _frames::FIVE::HD_size},
-                };
             } // namespace L
         } // namespace S
     } // namespace note
@@ -1559,8 +1465,40 @@ namespace mania {
 // * ==== [CONFIGURATION] ==================================================
 namespace config {
     // skin.ini
+    // const unsigned char skin_ini[] = {
+    //     #embed "../../../res/skins/Legacy/skin.ini" 
+    // }; 
+    // const std::size_t skin_ini_size = sizeof(skin_ini);
     EMBED_LVALUE(skin_ini)
     #embed "../../../res/skins/Legacy/skin.ini"
     RVALUE_SIZE(skin_ini) 
 } // namespace config
-} // namespace legacy
+} // namespace embedments
+
+
+
+
+// *****************
+// *    EXTERNS    *
+// *****************
+
+
+namespace legacy::samples {
+
+}
+
+namespace legacy::sprites {
+    
+}
+
+namespace legacy::config {
+    // | Embedded resources within legacy::config
+    inline const auto& skin_ini = embedments::config::skin_ini;
+
+
+    // | Sizes of embedded resources within legacy::config
+    namespace SIZE {
+        inline const auto& skin_ini = embedments::config::skin_ini_size;
+    } // namespace SIZE
+}
+
