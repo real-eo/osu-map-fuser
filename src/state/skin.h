@@ -8,10 +8,10 @@
 class SkinManager : public Manager {
 private:
     // State
-    SkinData currentSkin;
+    Skin currentSkin;
 
     // Persistence
-    SkinData&& loadSkinConfig();                                                        // Only called on initialization 
+    Skin&& loadSkinConfig();                                                            // Only called on initialization 
     void saveSkinConfig();                                                              // Only called when changing skin
     
     [[nodiscard]] bool loadFromFile(const std::string& path);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstddef>
+#include "../utils.h"                                                                   // ? Resource utilities 
 
 // * Macro to declare external embedded files
 #define EXTERN_FILE(varname)                    \
@@ -42,14 +42,9 @@
 
 #define EXTERN_ANIMATED(varname,definition)             \
     namespace varname {                                 \
-        extern const struct frame {                     \
-            const unsigned char* data;                  \
-            const std::size_t size;                     \
-        } definition[];                                 \
+        extern const frame definition[];                \
         extern const std::size_t definition##_frames;   \
     } /* namespace varname */                   
-
-
 
 
 // * Embed legacy skin resources

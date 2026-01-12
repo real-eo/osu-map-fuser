@@ -3,10 +3,9 @@
 #include "../rendering/renderer.h"
 // // #include "../ui/imguiManager.h"  // Uncomment when you add ImGui
 #include "../state/beatmap.h"
+#include "../state/skin.h"
 #include "../audio/songs.h"
 #include "../audio/sfx.h"
-
-#include "../resources/skins/legacy.h"
 
 #include <iostream>
 #include <chrono>
@@ -101,6 +100,9 @@ bool Application::init() {
     // * Initialize beatmap manager
     beatmapManager = std::make_unique<BeatmapManager>(window);
 
+    // * Initialize skin manager
+    skinManager = std::make_unique<SkinManager>(window);
+
     // * Initialize audio player
     audioPlayer = std::make_unique<AudioPlayer>();
     if (!audioPlayer->init()) {
@@ -126,9 +128,10 @@ bool Application::init() {
         // // sfxPlayer->play("drum-hitclap");
     }
     
-    // * Load skin
+    // * Load default skin (legacy skin)
     DEBUG_LOG("Random skin element size: " << legacy::sprites::score::TWO::HD_size);
     // TODO: Load skin from user-selected location; fallback to default legacy skin
+
 
     running = true;
     return running;

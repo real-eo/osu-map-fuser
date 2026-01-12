@@ -25,8 +25,8 @@ file(GLOB_RECURSE SRC_FILES
 )
 
 # Exclude external libraries
-list(FILTER SRC_FILES EXCLUDE REGEX "osu-parser/.*")
-list(FILTER SRC_FILES EXCLUDE REGEX "osuReplayEditorV3/.*")
+list(FILTER SRC_FILES EXCLUDE REGEX "3rd-party/osu-parser/.*")
+list(FILTER SRC_FILES EXCLUDE REGEX "3rd-party/osuReplayEditorV3/.*")
 # // list(FILTER SRC_FILES EXCLUDE REGEX "src/audio/.*")
 # // list(FILTER SRC_FILES EXCLUDE REGEX "src/audioengine_config_override.cpp")
 
@@ -34,8 +34,8 @@ list(FILTER SRC_FILES EXCLUDE REGEX "osuReplayEditorV3/.*")
 list(APPEND SRC_FILES
     "${CMAKE_SOURCE_DIR}/src/workarounds/audioengine_config_override.cpp"
     "${CMAKE_SOURCE_DIR}/src/workarounds/audioengine_error_stubs.cpp"    
-    "${CMAKE_SOURCE_DIR}/osuReplayEditorV3/ReplayEditor/audioengine.cpp"
-    # // "${CMAKE_SOURCE_DIR}/osuReplayEditorV3/ReplayEditor/config.cpp"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osuReplayEditorV3/ReplayEditor/audioengine.cpp"
+    # // "${CMAKE_SOURCE_DIR}/3rd-party/osuReplayEditorV3/ReplayEditor/config.cpp"
 )
 
 
