@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <variant>
 #include "../resources/utils.h"
+#include "../resources/skins/legacy.h"
 
 
 
@@ -58,8 +59,8 @@ struct SkinConfig : public SkinElement {};
 // * Skin data structs
 namespace SkinData {
 // * RESOURCES
-#include "../resources/skins/legacy.h"                                                  // Import legacy skin resources within the  
-                                                                                        // SkinData namespace to prevent name pollution
+// // #include "../resources/skins/legacy.h"                                                  // Import legacy skin resources within the  
+// //                                                                                         // SkinData namespace to prevent name pollution
 
 // * GENERAL
 #define EMBEDDED true
@@ -147,7 +148,7 @@ struct Samples {
             SkinSample bonus            = EMBEDDED_WAV(LS::osu::spinner::bonus);
             SkinSample spin             = EMBEDDED_WAV(LS::osu::spinner::spin);
         } spinner;
-    };
+    } osu;
 
     // * Taiko
     struct taiko {
@@ -600,10 +601,16 @@ private:
     SkinData::Sprites sprites;
     SkinData::Config config; 
 
-// public:
+public:
 //     Skin();
 //     ~Skin();
 
 //     // Load skin from path
 //     bool loadFromPath(const std::filesystem::path& path);
+
+    // Getters
+    const SkinExData&           getData()       const { return data;    }
+    const SkinData::Samples&    getSamples()    const { return samples; }
+    const SkinData::Sprites&    getSprites()    const { return sprites; }
+    const SkinData::Config&     getConfig()     const { return config;  }
 };

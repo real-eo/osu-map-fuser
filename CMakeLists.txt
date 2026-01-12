@@ -61,14 +61,14 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 # Add osu-parser native C++ library
 target_include_directories(${PROJECT_NAME} PUBLIC 
-    "${CMAKE_SOURCE_DIR}/osu-parser/include"
-    "${CMAKE_SOURCE_DIR}/osu-parser/include/osu!parser/Parser"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osu-parser/include"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osu-parser/include/osu!parser/Parser"
 )
 
 # Add osuReplayEditorV3 dependencies
 target_include_directories(${PROJECT_NAME} PRIVATE
-    "${CMAKE_SOURCE_DIR}/osuReplayEditorV3/ReplayEditor"
-    "${CMAKE_SOURCE_DIR}/osuReplayEditorV3/ReplayEditor/thirdparty/bass24"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osuReplayEditorV3/ReplayEditor"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osuReplayEditorV3/ReplayEditor/thirdparty/bass24"
 )
 
 # SDL2
@@ -103,6 +103,6 @@ endif()
 
 # BASS & BASS_FX
 target_link_directories(${PROJECT_NAME} PRIVATE
-    "${CMAKE_SOURCE_DIR}/osuReplayEditorV3/ReplayEditor/thirdparty/bass24"
+    "${CMAKE_SOURCE_DIR}/3rd-party/osuReplayEditorV3/ReplayEditor/thirdparty/bass24"
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE bass bass_fx)

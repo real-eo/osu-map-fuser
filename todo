@@ -5,13 +5,14 @@ Todo:
 - Implement object manipulation (move, resize, etc.)
 - Implement spliced map exporting
 + Implement skin for rendering
-- Restructure legacy skin externs
-- Extern legacy skin sprites
++ Restructure legacy skin externs
++ Extern legacy skin sprites
 - Use preprocessors to always export highest available definition of sprites (HD > SD)
 + Implement externs for animated sprites as a byte matrix (byte array of byte arrays)
 - Implement skin functionaliry (hit sounds, etc.)
 - Implement audio settings (master vol, music vol, sfx vol)
 - Implement scrollable timeline like in osu!editor
+- Store a "name" property for SkinElements to identify them - eg. for sfx playback. This should be done in SkinElement, but resource can also work.
 
 Bugs:
 - Fix "stoi" exceptions when loading certain beatmaps

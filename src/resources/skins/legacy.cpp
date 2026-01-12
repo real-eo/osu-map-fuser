@@ -725,26 +725,9 @@ namespace osu {
                     #embed "../../../3rd-party/osu-resources-2025.1218.0/osu.Game.Resources/Skins/Legacy/sliderb9@2x.png"
                     RVALUE_SIZE(HD)
                 } // namespace NINE
-
-                // // constexpr unsigned int FRAMES = 10;
-                // // const std::size_t TOTAL_SIZE  = ZERO::HD_size + ONE::HD_size + TWO::HD_size + THREE::HD_size + FOUR::HD_size +
-                // //                                 FIVE::HD_size + SIX::HD_size + SEVEN::HD_size + EIGHT::HD_size + NINE::HD_size;
             } // namespace _frames
 
             // | Slider body frame array
-            // // const unsigned char* const HD[] = {
-            // //     // Frame pointers
-            // //     _frames::ZERO::HD,
-            // //     _frames::ONE::HD,
-            // //     _frames::TWO::HD,
-            // //     _frames::THREE::HD,
-            // //     _frames::FOUR::HD,
-            // //     _frames::FIVE::HD,
-            // //     _frames::SIX::HD,
-            // //     _frames::SEVEN::HD,
-            // //     _frames::EIGHT::HD,
-            // //     _frames::NINE::HD,
-            // // };
             const frame HD[] = {
                 { _frames::ZERO::HD,     _frames::ZERO::HD_size},
                 {  _frames::ONE::HD,      _frames::ONE::HD_size},
@@ -757,6 +740,7 @@ namespace osu {
                 {_frames::EIGHT::HD,    _frames::EIGHT::HD_size},
                 { _frames::NINE::HD,     _frames::NINE::HD_size},
             };
+
             const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
 
 
@@ -917,6 +901,8 @@ namespace taiko {
                 {_frames::SEVEN::SD,  _frames::SEVEN::SD_size},
                 {_frames::EIGHT::SD,  _frames::EIGHT::SD_size},
             };
+
+            const std::size_t SD_frames = sizeof(SD) / sizeof(SD[0]);
         } // namespace clear
 
         namespace fail {
@@ -946,6 +932,8 @@ namespace taiko {
                 {  _frames::TWO::SD,    _frames::TWO::SD_size},
             };
 
+            const std::size_t SD_frames = sizeof(SD) / sizeof(SD[0]);
+
         } // namespace fail
 
         namespace idle {
@@ -968,6 +956,8 @@ namespace taiko {
                 { _frames::ZERO::SD,   _frames::ZERO::SD_size},
                 {  _frames::ONE::SD,    _frames::ONE::SD_size},
             };
+
+            const std::size_t SD_frames = sizeof(SD) / sizeof(SD[0]);
         } // namespace idle
 
         namespace kiai {
@@ -990,6 +980,8 @@ namespace taiko {
                 { _frames::ZERO::SD,   _frames::ZERO::SD_size},
                 {  _frames::ONE::SD,    _frames::ONE::SD_size},
             };
+
+            const std::size_t SD_frames = sizeof(SD) / sizeof(SD[0]);
         } // namespace kiai
     } // namespace pippidon
     namespace bar {
@@ -1251,6 +1243,8 @@ namespace mania {
                 { _frames::FOUR::HD,   _frames::FOUR::HD_size},
                 { _frames::FIVE::HD,   _frames::FIVE::HD_size},
             };
+
+            const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
         } // namespace L
 
         namespace N {
@@ -1306,6 +1300,8 @@ namespace mania {
                 { _frames::ZERO::HD,   _frames::ZERO::HD_size},
                 {  _frames::ONE::HD,    _frames::ONE::HD_size},
             };
+
+            const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
         } // namespace perfect
     } // namespace hit
     namespace key {
@@ -1398,6 +1394,8 @@ namespace mania {
                     { _frames::FOUR::HD,   _frames::FOUR::HD_size},
                     { _frames::FIVE::HD,   _frames::FIVE::HD_size},
                 };
+
+                const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
             } // namespace L
         } // namespace ONE
 
@@ -1455,6 +1453,8 @@ namespace mania {
                     { _frames::FOUR::HD,   _frames::FOUR::HD_size},
                     { _frames::FIVE::HD,   _frames::FIVE::HD_size},
                 };
+
+                const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
             } // namespace L
         } // namespace TWO
 
@@ -1512,6 +1512,8 @@ namespace mania {
                     { _frames::FOUR::HD,   _frames::FOUR::HD_size},
                     { _frames::FIVE::HD,   _frames::FIVE::HD_size},
                 };
+
+                const std::size_t HD_frames = sizeof(HD) / sizeof(HD[0]);
             } // namespace L
         } // namespace S
     } // namespace note

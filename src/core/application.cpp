@@ -78,6 +78,12 @@ bool Application::init() {
         return false;
     }
 
+    // * Initialize beatmap manager
+    beatmapManager = std::make_unique<BeatmapManager>(window);
+
+    // * Initialize skin manager
+    skinManager = std::make_unique<SkinManager>(window);
+
     // * Initialize renderer
     renderer = std::make_unique<Renderer>();
 
@@ -95,13 +101,6 @@ bool Application::init() {
     //     std::cerr << "ImGui init failed\n";
     //     return false;
     // }
-
-
-    // * Initialize beatmap manager
-    beatmapManager = std::make_unique<BeatmapManager>(window);
-
-    // * Initialize skin manager
-    skinManager = std::make_unique<SkinManager>(window);
 
     // * Initialize audio player
     audioPlayer = std::make_unique<AudioPlayer>();
@@ -124,12 +123,11 @@ bool Application::init() {
         return false;
     } else {
         // Test loading legacy skin sample and playing it
-        sfxPlayer->loadSampleMemory("drum-hitclap", legacy::samples::osu::drum::hit::clap, legacy::samples::osu::drum::hit::clap_size, 1.0f);
+        sfxPlayer->loadSampleMemory("drum-hitclap", std::get<resource>(skinManager->active().getSamples().osu.drum.hit.clap.data)); 
         // // sfxPlayer->play("drum-hitclap");
     }
     
-    // * Load default skin (legacy skin)
-    DEBUG_LOG("Random skin element size: " << legacy::sprites::score::TWO::HD_size);
+    // * Load skin
     // TODO: Load skin from user-selected location; fallback to default legacy skin
 
 

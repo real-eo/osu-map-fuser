@@ -13,6 +13,7 @@ class Renderer;
 class Toolbar;
 class ImGuiManager;
 class BeatmapManager;
+class SkinManager;
 class AudioPlayer;
 class SfxPlayer;
 
@@ -36,6 +37,7 @@ private:
 
     // Program state
     std::unique_ptr<BeatmapManager> beatmapManager;
+    std::unique_ptr<SkinManager> skinManager;
     std::unique_ptr<AudioPlayer> audioPlayer;
     std::unique_ptr<SfxPlayer> sfxPlayer;                                               // Must come after AudioPlayer (to ensure audio engine initialized first)   
 
