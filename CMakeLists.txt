@@ -20,7 +20,7 @@ file(GLOB_RECURSE SRC_FILES
     # // "${CMAKE_SOURCE_DIR}/src/rendering/*.cpp"
     # // "${CMAKE_SOURCE_DIR}/src/audio/*.cpp"
 
-    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+    "${CMAKE_SOURCE_DIR}/src/**/*.cpp"
     "${CMAKE_SOURCE_DIR}/main.cpp"
 )
 

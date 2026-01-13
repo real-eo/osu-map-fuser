@@ -109,8 +109,8 @@ bool Application::init() {
         return false;
     } else {
         // Set default audio settings
-        audioPlayer->setVolume(0.5f);                                                    // Max volume
-        audioPlayer->setPlaybackSpeed(1.0f);                                             // Normal speed
+        audioPlayer->setVolume(0.5f);                                                   // Max volume
+        audioPlayer->setPlaybackSpeed(1.0f);                                            // Normal speed
 
         // Show current audio settings
         audioPlayer->logState();
@@ -122,14 +122,16 @@ bool Application::init() {
         DEBUG_ERROR("SfxPlayer init failed");
         return false;
     } else {
-        // Test loading legacy skin sample and playing it
-        sfxPlayer->loadSampleMemory("drum-hitclap", std::get<resource>(skinManager->active().getSamples().osu.drum.hit.clap.data)); 
-        // // sfxPlayer->play("drum-hitclap");
-    }
-    
-    // * Load skin
-    // TODO: Load skin from user-selected location; fallback to default legacy skin
+        // Load skin samples into SfxPlayer
+        // TODO: might move this to Application::loadSkin() in case we want to reload skins later, i.e, on skin change
+        sfxPlayer->loadSkinSamples(skinManager->active().getSamples());
 
+        // Show current sfx state
+        sfxPlayer->logState();
+    }   
+
+    // // // * Initialize timeline
+    // // timeline = std::make_unique<Timeline>(&playbackPosition);
 
     running = true;
     return running;
@@ -187,7 +189,15 @@ void Application::handleEvents() {
                 break;
                 
             case SDL_KEYDOWN:
-                if (ev.key.keysym.sym == SDLK_ESCAPE) {
+                if (ev.key.keysym.sym == SDLK_SPACE) [[likely]] {
+                    // Toggle play/pause on spacebar
+                    audioPlayer->togglePause();
+
+                    if (DEBUG::enabled) {
+                        audioPlayer->logState();    
+                    }
+
+                } else if (ev.key.keysym.sym == SDLK_ESCAPE) [[unlikely]] {
                     running = false;
                 }
                 break;
@@ -210,6 +220,9 @@ void Application::handleEvents() {
 
 void Application::update(double deltaTime) {
     // Update game logic, audio sync, beatmap state, etc.
+    // Retrieve audio playback position from AudioPlayer
+    playbackPosition = audioPlayer->getCurrentTime();
+
     (void)deltaTime;                                                                    // Remove when you add actual update logic
 }
 
@@ -250,24 +263,30 @@ void Application::shutdown() {
 // * Delegations
 void Application::loadBeatmap() {
     // Load beatmap                                                                     - BeatmapManager
-    if (beatmapManager) {
+    if (beatmapManager) [[likely]] {
         beatmapManager->loadBeatmap();
-    } else {
+    } else [[unlikely]] { 
         BEATMAP_ERROR("BeatmapManager not initialized when attempting to load beatmap");
         return;
     }
 
     // Load audio                                                                       - AudioPlayer
-    if (audioPlayer) {
+    if (audioPlayer) [[likely]] {
         audioPlayer->load(beatmapManager->active().audioPath());
-    } else {
+
+        // Load the audio stream by setting playback at 0 ms and immediately pausing
+        audioPlayer->jumpTo(0);
+        audioPlayer->pause();                                                           // Mostly debug; when stopped, togglePause() doesn't work
+    } else [[unlikely]] {
         AUDIO_ERROR("AudioPlayer not initialized when attempting to load beatmap audio");
         return;
     }
 }
 
 void Application::addBeatmap() {
-    if (beatmapManager) {
+    if (beatmapManager) [[likely]] {
         beatmapManager->addBeatmap();  
     }
 }
+
+// // void Application::loadSkin()

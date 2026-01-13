@@ -16,6 +16,7 @@ class BeatmapManager;
 class SkinManager;
 class AudioPlayer;
 class SfxPlayer;
+// // class Timeline;
 
 
 // * Main application class orchestrating subsystems
@@ -27,6 +28,7 @@ private:
     int windowHeight;
     bool running;
     double elapsedTime;
+    int playbackPosition = 0;                                                           // Current audio playback position in milliseconds
 
     // Window & graphics
     SDL_Window* window;
@@ -39,7 +41,8 @@ private:
     std::unique_ptr<BeatmapManager> beatmapManager;
     std::unique_ptr<SkinManager> skinManager;
     std::unique_ptr<AudioPlayer> audioPlayer;
-    std::unique_ptr<SfxPlayer> sfxPlayer;                                               // Must come after AudioPlayer (to ensure audio engine initialized first)   
+    std::unique_ptr<SfxPlayer> sfxPlayer;                                               // Must come after AudioPlayer (to ensure audio engine initialized first)
+    // // std::unique_ptr<Timeline> timeline;                                                 // Must come after audioPlayer (to access playback position)
 
     void handleEvents();
     void update(double deltaTime);
@@ -72,4 +75,5 @@ public:
     // Management
     void loadBeatmap();
     void addBeatmap();
+    // // void loadSkin();
 };

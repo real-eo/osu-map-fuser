@@ -12,7 +12,12 @@ Todo:
 - Implement skin functionaliry (hit sounds, etc.)
 - Implement audio settings (master vol, music vol, sfx vol)
 - Implement scrollable timeline like in osu!editor
-- Store a "name" property for SkinElements to identify them - eg. for sfx playback. This should be done in SkinElement, but resource can also work.
++ Store a "name" property for SkinElements to identify them - eg. for sfx playback. This should be done in SkinElement, but resource can also work.
+- Implement lookahead for hitobjects based on a map's approach rate (AR)
+- Implement sfx playback for hitobjects, only play sfx from the active beatmap
+- Implement beatmap class to manage a single beatmap's data
+- Implement registry within BeatmapManager to track loaded beatmaps
+- Implement beatmap skin loading
 
 Bugs:
 - Fix "stoi" exceptions when loading certain beatmaps

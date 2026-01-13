@@ -17,18 +17,20 @@ private:
     //     : which is pre-populated with the embedded data from the legacy skin, such
     //     : that the embedded data is never lost. AS FOR NOW, WE IGNORE PERSISTENCE.
     //     : AND JUST LOAD THE LEGACY SKIN REGARDLESS. THIS IS TO BE IMPLEMENTED LATER.
+
     // Persistence
     Skin&& loadSkinConfig();                                                            // Only called on initialization 
     void saveSkinConfig();                                                              // Only called when changing skin
     
-    [[nodiscard]] bool loadFromFile(const std::string& path);
+    // Loading
+    bool loadSkin(const std::string& path);                                             // Loads a new skin into currentSkin from the given path
 
 public:
     SkinManager(SDL_Window* window);
     ~SkinManager();
 
     // Event handlers
-    void changeSkin();
+    void changeSkin(const std::string& path);                                           // Changes the current skin to the one at the given path (basically a wrapper for loadSkin + saveSkinConfig)
 
     // Getters
     const Skin& active() const { return currentSkin; }
