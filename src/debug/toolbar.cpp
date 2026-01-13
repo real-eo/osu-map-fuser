@@ -59,8 +59,8 @@ inline void handleSfxDebug(int commandId, Application* app) {
     switch (commandId) {
         case MenuID::DEBUG::Sfx::PLAY_SAMPLE_1:
 
-            DEBUG_LOG("SFX: play sample 1 (drum-hitclap)");
-            app->sfx()->play("drum-hitclap");
+            DEBUG_LOG("SFX: play sample 1 (drum-hitclap), @ 1.0f volume");
+            app->sfx()->play("drum-hitclap", 1.0f);
 
             break;
 
@@ -83,7 +83,7 @@ void Toolbar::createDebugMenu(HMENU& hMenuBar) {
     AppendMenuA(hDebugMenu, MF_SEPARATOR, 0, NULL);
 
     // SFX control commands
-    AppendMenuA(hDebugMenu, MF_STRING, MenuID::DEBUG::Sfx::PLAY_SAMPLE_1, "Play SFX: drum-hitclap");
+    AppendMenuA(hDebugMenu, MF_STRING, MenuID::DEBUG::Sfx::PLAY_SAMPLE_1, "Play SFX: drum-hitclap (@ 1.0f volume)");
     
     AppendMenuA(hMenuBar, MF_POPUP, (UINT_PTR)hDebugMenu, "DEBUG");
 }

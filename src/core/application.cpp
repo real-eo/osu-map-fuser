@@ -3,10 +3,9 @@
 #include "../rendering/renderer.h"
 // // #include "../ui/imguiManager.h"  // Uncomment when you add ImGui
 #include "../state/beatmap.h"
+#include "../state/skin.h"
 #include "../audio/songs.h"
 #include "../audio/sfx.h"
-
-#include "../resources/skins/legacy.h"
 
 #include <iostream>
 #include <chrono>
@@ -79,6 +78,12 @@ bool Application::init() {
         return false;
     }
 
+    // * Initialize beatmap manager
+    beatmapManager = std::make_unique<BeatmapManager>(window);
+
+    // * Initialize skin manager
+    skinManager = std::make_unique<SkinManager>(window);
+
     // * Initialize renderer
     renderer = std::make_unique<Renderer>();
 
@@ -97,10 +102,6 @@ bool Application::init() {
     //     return false;
     // }
 
-
-    // * Initialize beatmap manager
-    beatmapManager = std::make_unique<BeatmapManager>(window);
-
     // * Initialize audio player
     audioPlayer = std::make_unique<AudioPlayer>();
     if (!audioPlayer->init()) {
@@ -108,7 +109,7 @@ bool Application::init() {
         return false;
     } else {
         // Set default audio settings
-        audioPlayer->setVolume(1.0f);                                                    // Max volume
+        audioPlayer->setVolume(0.5f);                                                    // Max volume
         audioPlayer->setPlaybackSpeed(1.0f);                                             // Normal speed
 
         // Show current audio settings
@@ -122,12 +123,13 @@ bool Application::init() {
         return false;
     } else {
         // Test loading legacy skin sample and playing it
-        sfxPlayer->loadSampleMemory("drum-hitclap", legacy::samples::osu::drum::hit::clap, legacy::samples::osu::drum::hit::clap_size, 1.0f);
+        sfxPlayer->loadSampleMemory("drum-hitclap", std::get<resource>(skinManager->active().getSamples().osu.drum.hit.clap.data)); 
         // // sfxPlayer->play("drum-hitclap");
     }
-
+    
     // * Load skin
     // TODO: Load skin from user-selected location; fallback to default legacy skin
+
 
     running = true;
     return running;
