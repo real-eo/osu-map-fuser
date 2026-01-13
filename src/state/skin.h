@@ -8,22 +8,32 @@
 class SkinManager : public Manager {
 private:
     // State
-    SkinData currentSkin;
+    Skin currentSkin;
+
+    // TODO: Implement skin persistence system such that users can 
+    //     : save/load skins. Always fallback to legacy skin. Ensure SkinData::* 
+    //     : structs never get overwritten in a way that they lose the embedded data.
+    //     : When instantiating a Skin, use the Skin-class to create a new instance,
+    //     : which is pre-populated with the embedded data from the legacy skin, such
+    //     : that the embedded data is never lost. AS FOR NOW, WE IGNORE PERSISTENCE.
+    //     : AND JUST LOAD THE LEGACY SKIN REGARDLESS. THIS IS TO BE IMPLEMENTED LATER.
 
     // Persistence
-    SkinData&& loadSkinConfig();                                                        // Only called on initialization 
+    Skin&& loadSkinConfig();                                                            // Only called on initialization 
     void saveSkinConfig();                                                              // Only called when changing skin
     
-    [[nodiscard]] bool loadFromFile(const std::string& path);
+    // Loading
+    bool loadSkin(const std::string& path);                                             // Loads a new skin into currentSkin from the given path
 
 public:
     SkinManager(SDL_Window* window);
     ~SkinManager();
 
     // Event handlers
-    void changeSkin();
+    void changeSkin(const std::string& path);                                           // Changes the current skin to the one at the given path (basically a wrapper for loadSkin + saveSkinConfig)
 
     // Getters
+    const Skin& active() const { return currentSkin; }
     // TODO: FUCNTION TO RETURN ALL SAMPLES FROM THE LOADED SKIN
 
 };
