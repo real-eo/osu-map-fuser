@@ -46,7 +46,6 @@
         extern const std::size_t definition##_frames;   \
     } /* namespace varname */                   
 
-
 // * Embed legacy skin resources
 namespace legacy { 
 
