@@ -62,6 +62,8 @@ struct SkinConfig : public SkinElement {};
 
 
 // * Skin data structs
+// ! NOTE: These structs have default initializers that ensure no NULL values are present.
+// !       This implies that a variable with an empty initializer value still contains data!
 namespace SkinData {
 // * RESOURCES
 // // #include "../resources/skins/legacy.h"                                                  // Import legacy skin resources within the  
@@ -624,28 +626,3 @@ struct Config {
 } // namespace SkinData
 
 
-
-// * Skin class
-class Skin {
-private:
-    // Program metadata
-    SkinExData data;
-
-    // Actual skin data
-    SkinData::Samples samples;
-    SkinData::Sprites sprites;
-    SkinData::Config config; 
-
-public:
-//     Skin();
-//     ~Skin();
-
-//     // Load skin from path
-//     bool loadFromPath(const std::filesystem::path& path);
-
-    // Getters
-    const SkinExData&           getData()       const { return data;    }
-    const SkinData::Samples&    getSamples()    const { return samples; }
-    const SkinData::Sprites&    getSprites()    const { return sprites; }
-    const SkinData::Config&     getConfig()     const { return config;  }
-};
