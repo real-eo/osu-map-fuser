@@ -76,8 +76,10 @@ void BeatmapManager::loadBeatmap() {
     // Load the selected beatmap
     std::cout << "Loading beatmap: " << path << "\n";
 
+    // Ensure we don't assume beatmap loaded successfully to avoid  
+    // nullptr dereference when accessing beatmap data after loading
     if (!loadFromFile(path)) [[unlikely]] {
-        std::cerr << "Failed to load beatmap\n";                                        // Ensure we don't assume beatmap loaded
+        std::cerr << "Failed to load beatmap\n";
         return;
     }
 
