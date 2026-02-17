@@ -1,4 +1,11 @@
-.old
+# Local only
 .vscode
-sdl2
 build
+
+# Deprecated
+.old
+todo
+
+# Extras
+sdl2
+

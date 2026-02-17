@@ -76,16 +76,22 @@ void BeatmapManager::loadBeatmap() {
     // Load the selected beatmap
     std::cout << "Loading beatmap: " << path << "\n";
 
-    if (loadFromFile(path)) {
-        std::cout << "Beatmap loaded successfully\n";
+    if (!loadFromFile(path)) [[unlikely]] {
+        std::cerr << "Failed to load beatmap\n";                                        // Ensure we don't assume beatmap loaded
+        return;
     }
 
-    // Update activeBeatmap struct
-    activeBeatmap.beatmap = activeBeatmapPtr();
-    activeBeatmap.location = fs::path(path).parent_path();
-    activeBeatmap.index = 0;                                                            // When loading a new map, it is always at index 0
+    std::cout << "Beatmap loaded successfully\n";
+    
 
-    // todo
+    // Update activeBeatmap struct
+    // | activeBeatmap.beatmap = activeBeatmapPtr();
+    // | activeBeatmap.location = fs::path(path).parent_path();
+    // | activeBeatmap.index = 0;                                                            // When loading a new map, it is always at index 0
+    activeBeatmap = (maps.front())->ExData();                                           // | TEST
+
+
+    // todo ?
     // Notify application of new beatmap loaded
     std::cout << "Notifying application of loaded beatmap (TODO)\n";
 
@@ -140,7 +146,8 @@ void BeatmapManager::addBeatmap() {
 [[nodiscard]] bool BeatmapManager::loadFromFile(const std::string& path, bool discardIfDuplicate) {
     try {
         // Parse beatmap
-        auto beatmap = std::make_unique<OsuParser::Beatmap::Beatmap>(path);
+        // | auto beatmap = std::make_unique<OsuParser::Beatmap::Beatmap>(path);
+        auto beatmap = std::make_unique<Beatmap>(path);                                 // | TEST
         
         // Check for duplicates if requested
         if (discardIfDuplicate) {
@@ -166,7 +173,31 @@ void BeatmapManager::unloadAll() {
     maps.clear();
 }
 
-bool BeatmapManager::isAlreadyLoaded(const OsuParser::Beatmap::Beatmap& beatmap) const {
+// |bool BeatmapManager::isAlreadyLoaded(const OsuParser::Beatmap::Beatmap& beatmap) const {
+// |    // ? Check 1: If it has a BeatmapID, check by ID (submitted maps)
+// |    if (beatmap.Metadata.BeatmapID != "0") {
+// |        return std::any_of(maps.begin(), maps.end(),
+// |            [&beatmap](const auto& existing) {
+// |                return existing->Metadata.BeatmapID == beatmap.Metadata.BeatmapID;
+// |            }
+// |        );
+// |    }
+
+// |    // ? Check 2: Check by metadata combination (Artist + Title + Creator + Difficulty)
+// |    return std::any_of(maps.begin(), maps.end(),
+// |        [&beatmap](const auto& existing) {
+// |            return existing->Metadata.Artist == beatmap.Metadata.Artist &&
+// |                   existing->Metadata.Title == beatmap.Metadata.Title &&
+// |                   existing->Metadata.Creator == beatmap.Metadata.Creator &&
+// |                   existing->Metadata.Version == beatmap.Metadata.Version;
+// |        }
+// |    );
+
+// |    // TODO:
+// |    // ? Alternative Check 3: Somehow compare the entire file contents (only timing points + hit objects) quickly
+// |}
+
+bool BeatmapManager::isAlreadyLoaded(const Beatmap& beatmap) const {
     // ? Check 1: If it has a BeatmapID, check by ID (submitted maps)
     if (beatmap.Metadata.BeatmapID != "0") {
         return std::any_of(maps.begin(), maps.end(),
@@ -190,9 +221,11 @@ bool BeatmapManager::isAlreadyLoaded(const OsuParser::Beatmap::Beatmap& beatmap)
     // ? Alternative Check 3: Somehow compare the entire file contents (only timing points + hit objects) quickly
 }
 
+
 // TODO: FIX THIS FUNCTION TO ACTUALLY GET THE ACTIVE BEATMAP POINTER BASED ON THE CURRENTLY SELECTED ACTIVE INDEX (see loadBeatmap and addBeatmap for function requirements)
 // Internal helper to get the active beatmap pointer
-OsuParser::Beatmap::Beatmap* BeatmapManager::activeBeatmapPtr() const {
+// | OsuParser::Beatmap::Beatmap* BeatmapManager::activeBeatmapPtr() const {
+Beatmap* BeatmapManager::activeBeatmapPtr() const {
     return maps.empty() ? nullptr : maps.front().get();
 }
 
@@ -203,13 +236,4 @@ OsuParser::Beatmap::Beatmap* BeatmapManager::activeBeatmapPtr() const {
 // //     }
 // // }
 
-
-
-
-// * BeatmapExData function definitions
-// ? I kept this definition here, and not in "src/data/beatmap.h" to avoid including the parser in that file
-std::filesystem::path BeatmapExData::audioPath() const {
-    if (!beatmap) { return {}; }                                                        // No active beatmap
-    return location / beatmap->General.AudioFilename;
-}
 

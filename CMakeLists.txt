@@ -49,6 +49,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_SOURCE_DIR}/src/core"
     "${CMAKE_SOURCE_DIR}/src/debug"
     "${CMAKE_SOURCE_DIR}/src/data"
+    "${CMAKE_SOURCE_DIR}/src/models"
     "${CMAKE_SOURCE_DIR}/src/state"
     "${CMAKE_SOURCE_DIR}/src/state/managers"
     "${CMAKE_SOURCE_DIR}/src/rendering"

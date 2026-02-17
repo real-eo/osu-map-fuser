@@ -2,5 +2,5 @@ ninja > output-build.txt 2>&1
 
 echo
 echo Requested job finished. 
-echo -> See \"build/output-build.txt\" for details.
+echo "-> See \"build/output-build.txt\" for details."
 
