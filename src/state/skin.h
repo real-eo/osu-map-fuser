@@ -1,7 +1,8 @@
 #pragma once
 
 #include "manager.h"
-#include "../data/skin.h"
+// #include "../data/skin.h"
+#include "../models/skin.h"
 
 
 // * SkinManager: Manages loading, storing, and accessing skins
