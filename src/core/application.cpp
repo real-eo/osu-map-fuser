@@ -272,7 +272,6 @@ void Application::loadBeatmap() {
 
     // Load audio                                                                       - AudioPlayer
     if (audioPlayer) [[likely]] {
-        // | audioPlayer->load(beatmapManager->active().audioPath());
         audioPlayer->load(beatmapManager->active().audioPath());
 
         // Load the audio stream by setting playback at 0 ms and immediately pausing

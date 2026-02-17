@@ -21,8 +21,8 @@ Beatmap::~Beatmap() = default;
 
 // * BeatmapExData function definitions
 // ? I kept this definition here, and not in "src/data/beatmap.h" to avoid including the parser in that file
+// TODO: Refactor to not be a function, but a member variable that's set in the constructor, as this is 
+//     : more efficient. We keep this for now, as it's unsure if we need the location for anything else
 std::filesystem::path BeatmapExData::audioPath() const {
-    // | if (!beatmap) { return {}; }                                                        // No active beatmap
-    // | return data.location / General.AudioFilename;
     return location / audioFilename;
 }

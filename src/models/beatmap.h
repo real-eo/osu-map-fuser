@@ -26,17 +26,17 @@ public:
     ~Beatmap();
 
     // * Actual beatmap data
-    /*// ? Inherited from `OsuParser::Beatmap::Beatmap`
-    // Version
+    /*// (Members inherited from: `OsuParser::Beatmap::Beatmap`)
+    // ? Version
         std::int32_t Version = 14;
-    // Sections
+    // ? Sections
         Sections::General::GeneralSection General;
         Sections::Metadata::MetadataSection Metadata;
         Sections::Editor::EditorSection Editor;
         Sections::Difficulty::DifficultySection Difficulty;
         Sections::Colour::ColourSection Colours;
         Sections::Variable::VariableSection Variables;
-    // Objects
+    // ? Objects
         Objects::TimingPoint::TimingPoints TimingPoints;
         Objects::HitObject::HitObjects HitObjects;
         Objects::Event::Events Events;
@@ -45,8 +45,4 @@ public:
     // * Getters
     std::filesystem::path audioPath() const;
     const BeatmapExData& ExData() const { return data; }
-    // TODO: REFACTOR THIS TO RETURN THE BEATMAP SECTIONS PARSED BY THE PARSER!
-    // TODO: const SkinData::Samples&    getSamples()    const { return samples; }
-    // TODO: const SkinData::Sprites&    getSprites()    const { return sprites; }
-    // TODO: const SkinData::Config&     getConfig()     const { return config;  }
 };
