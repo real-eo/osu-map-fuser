@@ -45,7 +45,7 @@ private:
     // // std::unique_ptr<Timeline> timeline;                                                 // Must come after audioPlayer (to access playback position)
 
     void handleEvents();
-    void update(double deltaTime);
+    void update(/* // | double deltaTime */);
     void render();
     
     void shutdown();

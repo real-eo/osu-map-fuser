@@ -9,6 +9,14 @@
 // // #include <commdlg.h>
 // // #endif
 
+// #include "../debug/debug.h"
+#ifndef BEATMAP_MANAGER_LOG
+#define BEATMAP_MANAGER_LOG(...) do { } while(0)
+#endif
+#ifndef BEATMAP_MANAGER_ERROR
+#define BEATMAP_MANAGER_ERROR(...) do { } while(0)
+#endif
+
 #include <osu!parser/Parser/Beatmap.hpp>
 
 namespace fs = std::filesystem;
@@ -18,11 +26,11 @@ namespace fs = std::filesystem;
 BeatmapManager::BeatmapManager(SDL_Window* window) : Manager(window) {}
 
 BeatmapManager::~BeatmapManager() {
-    std::cout << "Unloading all beatmaps from manager...\n";
+    BEATMAP_MANAGER_LOG("Unloading all beatmaps from manager...");
     
     unloadAll();
 
-    std::cout << "BeatmapManager destroyed\n";
+    BEATMAP_MANAGER_LOG("BeatmapManager destroyed");
 }
 
 // // #ifdef _WIN32
@@ -74,16 +82,16 @@ void BeatmapManager::loadBeatmap() {
     unloadAll();
 
     // Load the selected beatmap
-    std::cout << "Loading beatmap: " << path << "\n";
+    BEATMAP_MANAGER_LOG("Loading beatmap: " << path);
 
     // Ensure we don't assume beatmap loaded successfully to avoid  
     // nullptr dereference when accessing beatmap data after loading
     if (!loadFromFile(path)) [[unlikely]] {
-        std::cerr << "Failed to load beatmap\n";
+        BEATMAP_MANAGER_ERROR("Failed to load beatmap from file: " << path);
         return;
     }
 
-    std::cout << "Beatmap loaded successfully\n";
+    BEATMAP_MANAGER_LOG("Beatmap loaded successfully");
     
 
     // Update activeBeatmap struct         
@@ -92,14 +100,14 @@ void BeatmapManager::loadBeatmap() {
 
     // todo ?
     // Notify application of new beatmap loaded
-    std::cout << "Notifying application of loaded beatmap (TODO)\n";
+    BEATMAP_MANAGER_LOG("Notifying application of loaded beatmap (TODO)");
 
 }
 
 void BeatmapManager::addBeatmap() {
     // Check if there's at least one beatmap loaded
     if (maps.empty()) {
-        std::cout << "No beatmaps currently loaded. Defaulting to load instead.\n";
+        BEATMAP_MANAGER_LOG("No beatmaps currently loaded. Defaulting to load instead.");
         
         loadBeatmap();
         
@@ -120,22 +128,22 @@ void BeatmapManager::addBeatmap() {
     if (path.empty()) { return; }                                                       // User cancelled
 
     // Load the selected beatmap
-    std::cout << "Adding beatmap: " << path << "\n";
+    BEATMAP_MANAGER_LOG("Adding beatmap: " << path);
 
     if (loadFromFile(path, true)) {                                                     // Discard the map if it's already loaded
-        std::cout << "Beatmap added successfully\n";
+        BEATMAP_MANAGER_LOG("Beatmap added successfully");
     } 
 
     // todo
     // Notify application of new beatmap added
-    std::cout << "Notifying application of added beatmap (TODO)\n";
+    BEATMAP_MANAGER_LOG("Notifying application of added beatmap (TODO)");
 
     // DEBUG: List all loaded beatmaps
-    std::cout << "Currently loaded beatmaps:\n";
+    BEATMAP_MANAGER_LOG("Currently loaded beatmaps:");
     for (size_t i = 0; i < maps.size(); ++i) {
         const auto& beatmap = maps[i];
         
-        std::cout << " [" << i << "] MapID: " << beatmap->Metadata.BeatmapID << ", by " << beatmap->Metadata.Creator << "\n";
+        BEATMAP_MANAGER_LOG(" [" << i << "] MapID: " << beatmap->Metadata.BeatmapID << ", by " << beatmap->Metadata.Creator);
     }
 }
 
@@ -150,7 +158,7 @@ void BeatmapManager::addBeatmap() {
         // Check for duplicates if requested
         if (discardIfDuplicate) {
             if (isAlreadyLoaded(*beatmap)) {
-                throw std::runtime_error("Beatmap is already loaded!");
+                throw std::runtime_error("Beatmap is already loaded!");                 // ? Unsure if we really should throw here...
             }
         }
 
@@ -161,7 +169,7 @@ void BeatmapManager::addBeatmap() {
     
     catch (const std::exception& e) {
         // Log error
-        std::cerr << "Error loading beatmap: " << e.what() << "\n";
+        BEATMAP_MANAGER_ERROR("Failed to load beatmap from file: " << e.what());
         return false;
     }
 }

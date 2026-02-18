@@ -24,3 +24,10 @@ struct BeatmapExData {
     std::filesystem::path audioPath() const;
     
 }; // BeatmapExData   
+
+
+struct HitObject {
+    // TODO: We might want to use the pre-defined hitobject in one 
+    //     : of the 3rd-party libraries as to not re-invent the wheel
+    int x;
+};

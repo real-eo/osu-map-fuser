@@ -1,6 +1,13 @@
 #include "beatmap.h"
 
 // // #include <osu!parser/Parser/Beatmap.hpp>
+// #include "../debug/debug.h"
+#ifndef BEATMAP_LOG
+#define BEATMAP_LOG(...) do { } while(0)
+#endif
+#ifndef BEATMAP_ERROR
+#define BEATMAP_ERROR(...) do { } while(0)
+#endif
 
 
 #define NOT_SET 0                                                                       // ! Can't be negative as it's unsigned
@@ -16,6 +23,12 @@ Beatmap::Beatmap(const std::string& path) : OsuParser::Beatmap::Beatmap(path) {
 }
 
 Beatmap::~Beatmap() = default;
+
+
+// * Performance critial
+void Beatmap::load() {
+    BEATMAP_LOG("Loading beatmap data (TODO)\n");
+}
 
 
 

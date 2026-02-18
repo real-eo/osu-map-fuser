@@ -42,7 +42,10 @@ public:
         Objects::Event::Events Events;
     */
 
+    // * Performance critial
+    void load();
+
     // * Getters
-    std::filesystem::path audioPath() const;
+    // std::filesystem::path audioPath() const;                                         // ? Stored in `BeatmapExData`
     const BeatmapExData& ExData() const { return data; }
 };

@@ -152,13 +152,13 @@ int Application::run() {
 
     // Main loop
     while (running) {
-        auto now = std::chrono::high_resolution_clock::now();
-        double deltaTime = std::chrono::duration<double>(now - lastFrame).count();
-        elapsedTime = std::chrono::duration<double>(now - startTime).count();
-        lastFrame = now;
+        // | auto now = std::chrono::high_resolution_clock::now();
+        // | double deltaTime = std::chrono::duration<double>(now - lastFrame).count();
+        // | elapsedTime = std::chrono::duration<double>(now - startTime).count();
+        // | lastFrame = now;
 
         handleEvents();
-        update(deltaTime);
+        // | update();
         render();
 
         SDL_Delay(8);                                                   // ~120 FPS cap (adjust or remove for uncapped)
@@ -218,12 +218,19 @@ void Application::handleEvents() {
 }
 
 
-void Application::update(double deltaTime) {
-    // Update game logic, audio sync, beatmap state, etc.
+void Application::update(/* // | double deltaTime */ ) {
+    // ? Update game logic, audio sync, beatmap state, etc.
     // Retrieve audio playback position from AudioPlayer
     playbackPosition = audioPlayer->getCurrentTime();
 
-    (void)deltaTime;                                                                    // Remove when you add actual update logic
+    // Load beatmap objects ahead of time
+    // if (beatmapManager) [[likely]] {
+    // } 
+    for (auto& beatmap : beatmapManager->all()) {
+        beatmap->load();                                                                // Load objects that should be active at the current playback position (or slightly ahead for preloading)
+    }
+    
+    // | (void)deltaTime;                                                                    // Remove when you add actual update logic
 }
 
 
@@ -266,7 +273,7 @@ void Application::loadBeatmap() {
     if (beatmapManager) [[likely]] {
         beatmapManager->loadBeatmap();
     } else [[unlikely]] { 
-        BEATMAP_ERROR("BeatmapManager not initialized when attempting to load beatmap");
+        BEATMAP_MANAGER_ERROR("BeatmapManager not initialized when attempting to load beatmap");
         return;
     }
 
