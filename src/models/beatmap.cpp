@@ -1,13 +1,13 @@
 #include "beatmap.h"
 
 // // #include <osu!parser/Parser/Beatmap.hpp>
-// #include "../debug/debug.h"
-#ifndef BEATMAP_LOG
-#define BEATMAP_LOG(...) do { } while(0)
-#endif
-#ifndef BEATMAP_ERROR
-#define BEATMAP_ERROR(...) do { } while(0)
-#endif
+#include "../debug/debug.h"
+// #ifndef BEATMAP_LOG
+// #define BEATMAP_LOG(...) do { } while(0)
+// #endif
+// #ifndef BEATMAP_ERROR
+// #define BEATMAP_ERROR(...) do { } while(0)
+// #endif
 
 
 #define NOT_SET 0                                                                       // ! Can't be negative as it's unsigned
@@ -27,7 +27,16 @@ Beatmap::~Beatmap() = default;
 
 // * Performance critial
 void Beatmap::load() {
-    BEATMAP_LOG("Loading beatmap data (TODO)\n");
+    // BEATMAP_LOG("Loading beatmap data (TODO)");
+    /*
+    BEATMAP_LOG("First 5 hit objects:" << std::endl
+        << "1: (" << HitObjects.data[0].Time << ", " << HitObjects.data[0].Pos.x << ", " << HitObjects.data[0].Pos.y << ")" << "\n"
+        << "2: (" << HitObjects.data[1].Time << ", " << HitObjects.data[1].Pos.x << ", " << HitObjects.data[1].Pos.y << ")" << "\n"
+        << "3: (" << HitObjects.data[2].Time << ", " << HitObjects.data[2].Pos.x << ", " << HitObjects.data[2].Pos.y << ")" << "\n"
+        << "4: (" << HitObjects.data[3].Time << ", " << HitObjects.data[3].Pos.x << ", " << HitObjects.data[3].Pos.y << ")" << "\n"
+        << "5: (" << HitObjects.data[4].Time << ", " << HitObjects.data[4].Pos.x << ", " << HitObjects.data[4].Pos.y << ")"
+    );
+    */
 }
 
 

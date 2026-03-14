@@ -9,13 +9,13 @@
 // // #include <commdlg.h>
 // // #endif
 
-// #include "../debug/debug.h"
-#ifndef BEATMAP_MANAGER_LOG
-#define BEATMAP_MANAGER_LOG(...) do { } while(0)
-#endif
-#ifndef BEATMAP_MANAGER_ERROR
-#define BEATMAP_MANAGER_ERROR(...) do { } while(0)
-#endif
+#include "../debug/debug.h"
+// #ifndef BEATMAP_MANAGER_LOG
+// #define BEATMAP_MANAGER_LOG(...) do { } while(0)
+// #endif
+// #ifndef BEATMAP_MANAGER_ERROR
+// #define BEATMAP_MANAGER_ERROR(...) do { } while(0)
+// #endif
 
 #include <osu!parser/Parser/Beatmap.hpp>
 

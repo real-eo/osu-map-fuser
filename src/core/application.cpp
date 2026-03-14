@@ -158,7 +158,7 @@ int Application::run() {
         // | lastFrame = now;
 
         handleEvents();
-        // | update();
+        update();
         render();
 
         SDL_Delay(8);                                                   // ~120 FPS cap (adjust or remove for uncapped)
